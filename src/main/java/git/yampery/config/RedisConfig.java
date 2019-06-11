@@ -21,7 +21,8 @@ public class RedisConfig {
     @Bean(name = "jedisPool")
     @Primary
     public JedisPool getJedisPool() {
-        return new JedisPool(jedisPoolConfig(), host, port, 0, password, database);
+        //return new JedisPool(jedisPoolConfig(), host, port, 0, password, database); 带有密码及数据库的
+        return new JedisPool(jedisPoolConfig(), host, port, 100);
     }
 
     public JedisPoolConfig jedisPoolConfig() {
